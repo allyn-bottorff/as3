@@ -1,4 +1,4 @@
-module gitlab.redchimney.com/allyn.bottorff/goas3parse
+module gitlab.redchimney.com/allyn.bottorff/goas3parse v1.0.0
 
 go 1.19
 
