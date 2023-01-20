@@ -123,6 +123,6 @@ func (dec *Declaration) PrintVSNames() {
 func (dec *Declaration) PrintAll() {
 	decBytes, err := json.Marshal(dec)
 	if err != nil {
-		fmt.Printf(decBytes)
+		fmt.Printf(string(decBytes))
 	}
 }
