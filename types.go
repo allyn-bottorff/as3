@@ -2,7 +2,7 @@ package as3parse
 
 import (
 	"fmt"
-	"json"
+	"encoding/json"
 )
 
 type Monitor struct {
