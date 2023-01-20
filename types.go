@@ -1,6 +1,9 @@
 package as3parse
 
-import "fmt"
+import (
+	"fmt"
+	"json"
+)
 
 type Monitor struct {
 	Name        string `mapstructure:"name,omitempty"`
@@ -104,7 +107,6 @@ func (dec *Declaration) Summarize() {
 	for _, t := range dec.Tenants {
 		t.Summarize()
 	}
-
 }
 
 func (dec *Declaration) PrintVSNames() {
@@ -114,5 +116,13 @@ func (dec *Declaration) PrintVSNames() {
 				fmt.Printf("%s\n", v.Name)
 			}
 		}
+	}
+}
+
+// Print entire parsed declaration to the console in json format
+func (dec *Declaration) PrintAll() {
+	decBytes, err := json.Marshal(dec)
+	if err != nil {
+		fmt.Printf(decBytes)
 	}
 }
