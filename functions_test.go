@@ -3,6 +3,7 @@ package as3parse
 import (
 	"encoding/json"
 	"testing"
+	"fmt"
 )
 
 func TestParseTenant(t *testing.T) {
@@ -77,5 +78,26 @@ func TestParseDec(t *testing.T) {
 	if dec.Controls["archiveTimestamp"] != expectedDec.Controls["archiveTimestamp"] {
 		t.Fatalf("Failed to match Controls archiveTimestamp: %s -> %s", dec.Controls["archiveTimestamp"], expectedDec.Controls["archiveTimestamp"])
 	}
+
+}
+
+
+func TestPrintDec(t *testing.T) {
+
+	jsonBytes := []byte(`
+	{"class": "ADC",
+"controls": {
+"archiveTimestamp": "some timestamp"
+},
+"label": "AS3 direct deploy",
+"remark": "HTTP with custom persistence",
+"schemaVersion": "3.12.0",
+"id": "autogen_2f98bc55-0f8b-4ec2-ade4-efa4e3ef30a5",
+"updateMode": "selective"}
+`)
+	jsonMap := make(map[string]interface{})
+	json.Unmarshal(jsonBytes, &jsonMap)
+	dec := ParseDec(jsonMap)
+	dec.PrintAll()
 
 }
