@@ -33,7 +33,7 @@ type Member struct {
 }
 
 type VirtualServer struct {
-	Pool               Pool
+	Pool               string
 	Name               string
 	AllowVlans         []map[string]string `mapstructure:"allowVlans"`
 	Class              string              `mapstructure:"class"`
