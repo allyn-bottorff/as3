@@ -3,7 +3,6 @@ package as3parse
 import (
 	"encoding/json"
 	"testing"
-	"fmt"
 )
 
 func TestParseTenant(t *testing.T) {

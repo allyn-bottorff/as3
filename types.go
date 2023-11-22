@@ -29,7 +29,7 @@ type Member struct {
 	AddressDiscovery string `mapstructure:"addressDiscovery"`
 	ExternalId       string `mapstructure:"externalId"`
 	Hostname         string `mapstructure:"hostname"`
-	ServicePort      string `mapstructure:"servicePort"`
+	ServicePort      int `mapstructure:"servicePort"`
 }
 
 type VirtualServer struct {
