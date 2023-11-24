@@ -1,8 +1,8 @@
 package as3parse
 
 import (
-	"fmt"
 	"encoding/json"
+	"fmt"
 )
 
 type Monitor struct {
@@ -29,12 +29,13 @@ type Member struct {
 	AddressDiscovery string `mapstructure:"addressDiscovery"`
 	ExternalId       string `mapstructure:"externalId"`
 	Hostname         string `mapstructure:"hostname"`
-	ServicePort      int `mapstructure:"servicePort"`
+	ServicePort      int    `mapstructure:"servicePort"`
 }
 
 type VirtualServer struct {
 	Pool               string
 	Name               string
+	Layer4             string              `mapstructure:"layer4,omitempty"`
 	AllowVlans         []map[string]string `mapstructure:"allowVlans"`
 	Class              string              `mapstructure:"class"`
 	ClientTLS          map[string]string   `mapstructure:"clientTLS"`

@@ -59,6 +59,12 @@ func ParseApp(rawApp map[string]interface{}, name string) Application {
 				switch class {
 				case "Service_HTTPS":
 					app.VirtualServers = append(app.VirtualServers, ParseVS(val, k))
+				case "Service_HTTP":
+					app.VirtualServers = append(app.VirtualServers, ParseVS(val, k))
+				case "Service_TCP":
+					app.VirtualServers = append(app.VirtualServers, ParseVS(val, k))
+				case "Service_L4":
+					app.VirtualServers = append(app.VirtualServers, ParseVS(val, k))
 				case "Monitor":
 					app.Monitors = append(app.Monitors, ParseMon(val, k))
 				case "Pool":
