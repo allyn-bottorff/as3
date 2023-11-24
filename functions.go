@@ -63,6 +63,8 @@ func ParseApp(rawApp map[string]interface{}, name string) Application {
 					app.VirtualServers = append(app.VirtualServers, ParseVS(val, k))
 				case "Service_TCP":
 					app.VirtualServers = append(app.VirtualServers, ParseVS(val, k))
+				case "Service_UDP":
+					app.VirtualServers = append(app.VirtualServers, ParseVS(val, k))
 				case "Service_L4":
 					app.VirtualServers = append(app.VirtualServers, ParseVS(val, k))
 				case "Monitor":
