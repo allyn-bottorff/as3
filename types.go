@@ -32,6 +32,10 @@ type Member struct {
 	ServicePort      int    `mapstructure:"servicePort"`
 }
 
+// AS3 Virtual VirtualServer
+
+// This struct is a superset representing the possible keys for a virtual VirtualServer
+// including Service_HTTP, Service_HTTPS, Service_TCP, Service_L4
 type VirtualServer struct {
 	Pool               string
 	Name               string
