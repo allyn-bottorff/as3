@@ -18,7 +18,7 @@ servers.
 import (
 	"encoding/json"
 	"os"
-	as3parse "gitlab.redchimney.com/publicpackages/goas3parse"
+	as3parse "github.com/allyn-bottorff/as3"
 
 )
 
