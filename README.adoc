@@ -4,7 +4,7 @@ AS3 parsing module for Go
 
 == Status
 
-This project currently supports parsing a raw AS3 declaration (as JSON) into a
+This project currently supports parsing a raw AS3 declaration into a
 list of Go structs. It can parse a single declaration into a list of Tenant,
 Application, and Virtual Server objects, including as many sub
 properties/objects as possible. Focus is on LTM configuration for HTTPS virtual
