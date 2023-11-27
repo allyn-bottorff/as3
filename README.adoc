@@ -1,6 +1,6 @@
 = GoAS3Parse
 
-Go AS3 parsing module
+AS3 parsing module for Go
 
 == Status
 
