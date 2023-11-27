@@ -1,4 +1,4 @@
-module gitlab.redchimney.com/publicpackages/goas3parse
+module github.com/allyn-bottorff/as3
 
 go 1.19
 
