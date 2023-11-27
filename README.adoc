@@ -1,19 +1,19 @@
-# GoAS3Parse
+= GoAS3Parse
 
 Go AS3 parsing module
 
-## Status
+== Status
 
 This project currently support parsing a raw AS3 declaration into a list of Go
 structs. It can parse a single declaration into a list of Tenant, Application,
 and Virtual Server objects, including as many sub properties/objects as
-possible. Focus is on the AS3 objects typically seen in VU F5 configurations,
-so some edge cases might not be parsed.
+possible. Focus is on LTM configuration for HTTPS virtual servers.
 
 
-## Usage
+== Usage
 
-```go
+[source,go]
+----
 import (
 	"encoding/json"
 	"os"
@@ -52,5 +52,4 @@ func main() {
 	dec.Summarize()
 
 }
-```
-
+----
