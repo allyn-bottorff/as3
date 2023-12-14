@@ -108,7 +108,12 @@ func (dec *Declaration) Summarize() {
 	fmt.Printf("  SchemaVersion: %s\n", dec.SchemaVersion)
 	fmt.Printf("  Id: %s\n", dec.Id)
 	fmt.Printf("  Controls: %v\n", dec.Controls)
-	fmt.Printf("  Tenants: %d\n", len(dec.Tenants))
+	fmt.Printf("  Total tenants: %d\n", len(dec.Tenants))
+	apps := 0
+	for _, t := range dec.Tenants {
+		apps += len(t.Applications)
+	}
+	fmt.Printf("  Total apps: %d\n", apps)
 	for _, t := range dec.Tenants {
 		t.Summarize()
 	}
