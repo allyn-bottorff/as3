@@ -24,8 +24,8 @@ import (
 
 
 // Read in a JSON object file and store the contents as a map[string]interface{}
-func readJson(s string) map[string]interface{} {
-	f, err := os.ReadFile(s)
+func readJson(filePath string) map[string]interface{} {
+	f, err := os.ReadFile(filePath)
 	if err != nil {
 		log.Fatal("Failed to read AS3 JSON file.")
 	}
@@ -43,11 +43,8 @@ func main() {
 	// Create a map[string]interface{} 
 	jsonMap := readJson("./path-to-as3.json")
 
-	// Declare an empty AS3 Declaration
-	var dec as3parse.Declaration	
-
 	// Fill the AS3 Declaration with the parsed contents of the AS3 json
-	var dec as3parse.ParseDec(jsonMap)
+	dec := as3parse.ParseDec(jsonMap)
 
 	// Print out basic statistic about the declaration
 	dec.Summarize()
